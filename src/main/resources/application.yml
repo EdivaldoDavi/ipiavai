@@ -1,0 +1,39 @@
+server:
+    port: 8080
+logging:
+  level:
+    org.springframework.security: DEBUG
+ 
+spring: 
+    http:
+      multipart:              
+        max-request-size: 128KB
+        max-file-size: 128KB
+ 
+    session:
+            store-type: none              
+    redis:
+       # host: 192.168.99.100
+        port: 6379
+    jpa:
+        database: POSTGRESQL
+        show-sql: true
+        hibernate:
+              ddl-auto: validate
+        properties:
+              hibernate:
+                  format_sql: true
+    datasource:
+        platform: postgres
+        url: jdbc:postgresql://localhost:5432/algamoneyapi
+        username: postgres
+        password: 'postgres'
+        driver-class-name: org.postgresql.Driver
+ 
+ 
+#liquibase:
+ #   change-log: classpath:/db/changelog-master.xml
+ 
+ 
+ 
+   
